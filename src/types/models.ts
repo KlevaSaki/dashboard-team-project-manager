@@ -34,3 +34,9 @@ export type Comment = {
     content: string;
     createdAt: number;
 }
+
+export type Activity = {
+    id: ID;
+    message: string;
+    createdAt: number;
+}
