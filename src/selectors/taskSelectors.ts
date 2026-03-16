@@ -6,12 +6,12 @@ export function selectTasksForProject( state: AppState, projectId: ID){
 
     const taskIds = state.projectTasks[projectId] || [];
 
-    return taskIds.map(id => state.tasks[id])
+    return taskIds.map(id => state.tasks[id]).filter(Boolean)
 }
 
 export function selectCommentsForTask( state: AppState, taskId: ID) {
 
     const commentIds = state.taskComments[taskId] || [];
 
-    return commentIds.map(id => state.comments[id])
+    return commentIds.map(id => state.comments[id]).filter(Boolean)
 }
