@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useProjects } from "../hooks/useProjects";
+import { Link } from "react-router-dom";
 
 export default function Dashboard() {
     const { projects, createProject } = useProjects();
@@ -28,7 +29,9 @@ export default function Dashboard() {
 
             <div className="grid gap-4 ">
                 {projects.map(p => (
-                    <div key={p.id} className="border p-4">{p.name}</div>
+                    <Link key={p.id} to={`/project/${p.id}`} className="border p-4 hover:bg-gray-100">
+                        {p.name}
+                    </Link>
                 ))}
             </div>
         </div>
