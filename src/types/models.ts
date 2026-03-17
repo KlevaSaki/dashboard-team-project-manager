@@ -10,6 +10,7 @@ export type TaskStatus =
     | "backlog"
     | "todo"
     | "in-progress"
+    | "review"
     | "done"
 
 export type Task = {
