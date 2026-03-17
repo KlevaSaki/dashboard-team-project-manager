@@ -6,116 +6,75 @@ Overview
 
 Team Project Manager is a Kanban-style task management app that allows users to:
 
-Create and manage projects
-
-Add and organize tasks
-
-Move tasks across workflow stages
-
-Add comments to tasks
-
-Track activity within projects
+Create and manage projects, Add and organize tasks, Move tasks across workflow stages, Add comments to tasks, Track activity within projects
 
 This project focuses on real-world frontend engineering practices, not just UI.
 
-Key Concepts Demonstrated
-
 This app was built to practice and showcase:
 
-Advanced React Patterns
-
-useReducer for complex state management
-
-useContext for global state
-
-Custom hooks (useProjects, useTasks, useComments)
-
-Component-based architecture
-
-Normalized State (Relational Data)
+- Advanced React Patterns - useReducer for complex state management - useContext for global state - Custom hooks (useProjects, useTasks, useComments) - Component-based architecture - Normalized State (Relational Data)
 
 The app uses a database-like structure:
 
-projects: Record<ID, Project>
-tasks: Record<ID, Task>
-comments: Record<ID, Comment>
+{ 
+  projects: Record<ID, Project>
+  tasks: Record<ID, Task>
+  comments: Record<ID, Comment>
 
-projectTasks: Record<ProjectId, TaskId[]>
-taskComments: Record<TaskId, CommentId[]>
+  projectTasks: Record<ProjectId, TaskId[]>
+  taskComments: Record<TaskId, CommentId[]> 
+}
 
 This improves:
 
-scalability
+- scalability, performance, maintainability
 
-performance
+=> Performance Optimization was achieved by implementing;
 
-maintainability
+- Selector pattern for efficient data access, Minimal re-renders through structured state usage
 
-Performance Optimization
+=> Scalable Architecture was achieved by implementing;
 
-Selector pattern for efficient data access
+- Feature-based folder structure and Separation of concerns:
 
-Minimal re-renders through structured state usage
+- UI → Components
 
--Scalable Architecture
+- Logic → Hooks
 
-Feature-based folder structure
-
-Separation of concerns:
-
-UI → Components
-
-Logic → Hooks
-
-State → Reducers + Context
+- State → Reducers + Context
 
 Features
 - Project Management
+. Create new projects
+. View all projects in a dashboard
 
-Create new projects
+- Task Management
+. Create tasks within projects
 
-View all projects in a dashboard
-
- Task Management
-
-Create tasks within projects
-
-Organize tasks by status:
-
-Backlog
-
-Todo
-
-In Progress
-
-Review
-
-Done
+- Organize tasks by status:
+. Backlog
+. Todo
+. In Progress
+. Review
+. Done
 
 
 - Comments System
-
-Add comments to tasks
-
-View task discussions
+. Add comments to tasks
+. View task discussions
 
 - Persistence
+. State is saved using localStorage
 
-State is saved using localStorage
 
- Tech Stack
+=> Tech Stack
+. React 19.2
+. TypeScript
+. TailwindCSS
+. React Router
+. dnd-kit
+. UUID
 
-React 19.2
-
-TypeScript
-
-TailwindCSS
-
-React Router
-
-dnd-kit
-
-UUID
 
 - Project Structure
 src
@@ -128,8 +87,10 @@ src
  ├── types           # TypeScript models
 
 Getting Started
+
 1. Clone the repo
 git clone https://github.com/your-KlevaSaki/team-project-manager.git
+
 cd team-project-manager
 
 2. Install dependencies
@@ -140,45 +101,30 @@ npm run dev
 
 -Example Workflow
 
-Create a project
+. Create a project
+. Open the project
+. Add tasks
+. Move tasks across columns
+. Add comments
+. Track progress
 
-Open the project
 
-Add tasks
+=> This project helped me deeply understand:
 
-Move tasks across columns
-
-Add comments
-
-Track progress
-
-- What I Learned
-
-This project helped me deeply understand:
-
-Managing complex relational state in React
-
-Structuring apps for scalability
-
-Writing clean, reusable hooks
-
-Building interactive UIs with real-world patterns
-
-Using TypeScript effectively in large apps
+. Managing complex relational state in React
+. Structuring apps for scalability
+. Writing clean, reusable hooks
+. Building interactive UIs with real-world patterns
+. Using TypeScript effectively in large apps
 
 => Future Improvements
 
-Undo/Redo functionality
-
-Command palette (Ctrl + K)
-
-Keyboard shortcuts
-
-IndexedDB persistence
-
-Real-time collaboration (WebSockets)
-
-Authentication & backend integration
+. Undo/Redo functionality
+. Command palette (Ctrl + K)
+. Keyboard shortcuts
+. IndexedDB persistence
+. Real-time collaboration (WebSockets)
+. Authentication & backend integration
 
 
 💡 Author
